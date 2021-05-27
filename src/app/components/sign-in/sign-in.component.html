@@ -1,0 +1,20 @@
+<div class="container">
+    <h2 style="text-align: center;">Sign-In angular template Driven form Example</h2>
+    <form #signin='ngForm' (ngSubmit)="formdata(signin);">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="emailcontainer" ngModel email required #emailcontainer="ngModel">
+            <small id="emailHelp" class="form-text text-muted" *ngIf="emailcontainer.touched && !emailcontainer.valid">Please Enter a Valid Email.</small>
+        </div>
+        <div class="form-group m10">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="passwordcontainer" ngModel required #passwordcontainer="ngModel">
+            <small *ngIf="passwordcontainer.touched && !passwordcontainer.valid">Enter a password.</small>
+        </div>
+        <div class="form-group form-check m10">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="checkboxcontainer" ngModel required>
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary m10" [disabled]="!signin.valid">Submit</button>
+    </form>
+</div>
